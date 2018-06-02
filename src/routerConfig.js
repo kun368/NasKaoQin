@@ -4,6 +4,11 @@
 
 import HeaderAsideFooterLayout from './layouts/HeaderAsideFooterLayout';
 import Home from './pages/Home';
+import Create from './pages/Create';
+import Help from './pages/Help';
+import PunchCard from './pages/PunchCard';
+import PunchDetail from './pages/PunchDetail';
+import MyCenter from './pages/MyCenter';
 import NotFound from './pages/NotFound';
 
 const routerConfig = [
@@ -11,6 +16,31 @@ const routerConfig = [
     path: '/',
     layout: HeaderAsideFooterLayout,
     component: Home,
+  },
+  {
+    path: '/Create',
+    layout: HeaderAsideFooterLayout,
+    component: Create,
+  },
+  {
+    path: '/Help',
+    layout: HeaderAsideFooterLayout,
+    component: Help,
+  },
+  {
+    path: '/PunchCard/:txHash',
+    layout: HeaderAsideFooterLayout,
+    component: PunchCard,
+  },
+  {
+    path: '/PunchDetail/:txHash',
+    layout: HeaderAsideFooterLayout,
+    component: PunchDetail,
+  },
+  {
+    path: '/MyCenter',
+    layout: HeaderAsideFooterLayout,
+    component: MyCenter,
   },
   {
     path: '*',

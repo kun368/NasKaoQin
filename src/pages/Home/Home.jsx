@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import ExcellentHomePage from "./components/ExcellentHomePage/ExcellentHomePage";
+import CardItems from "./components/CardItems/CardItems";
+import ProductInfo from "./components/ProductInfo/ProductInfo";
 
 export default class Home extends Component {
   static displayName = 'Home';
@@ -9,6 +12,12 @@ export default class Home extends Component {
   }
 
   render() {
-    return <div className="home-page" />;
+    return (
+      <div className="home-page">
+        <ExcellentHomePage/>
+        {/*<CardItems/>*/}
+        <ProductInfo/>
+      </div>
+    );
   }
 }
