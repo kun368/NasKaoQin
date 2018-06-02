@@ -3,47 +3,58 @@ import ReactMarkdown from 'react-markdown';
 import './MarkdownDocs.scss';
 
 const initialSource = `
-# 开发者入驻
+# 系统简介
 
-## 产品定位
+考勤是现代企业和人力资源最基本最重要的管理工具之一，它看似是一种微不足道的公司流程，却实际是一门艺术性科学。考勤事实上对于一个企业来说却有着非常重要的作用，良好合理的考勤制度和考勤方式能促进企业的效率和内部公平，培养良好的企业文化；反之则会给员工与管理者带来隔阂，产生无尽的怨恨与矛盾，进而拖累企业的健康成长。
 
-支付宝小程序是一种全新的开放模式，它运行在支付宝客户端，可以被便捷地获取和传播，为终端用户提供更优的用户体验。小程序开放给开发者更多的JSAPI和OpenAPI能力，通过小程序可以为用户提供多样化便捷服务。
+有调查显示，从20世纪90年代起，中国企业对考勤工具的依赖程度逐年上升，从最初的考勤打卡机、到后来的指纹打卡、视网膜打卡等等，考勤设备在不断更新换代，但是考勤过程中的痛点却往往并未能很好地同步解决。尤其是随着互联网和电子科技的飞速发展，如今的企事业单位早已经进入了现代化办公的时代，人们的工作效率不断提升，工作流程和方式也在日新月异，对更加科学合理的考勤服务的需求越来越迫切，考勤管理必须更人性化、更高效化，更具适应性。
 
-支付宝小程序开放给企业帐号，想要成为支付宝小程序开发者，需要完成注册、入驻以及小程序创建三步。
+如何避免考勤作弊？如何更加灵活地安排考勤流程？如何更合理有效地分析运用考勤数据？……
+
+**星云考勤系统团队通过创造性地运用区块链技术，为考勤工具带来了全新的可能。**
+
+**我们发挥区块链技术所具有的分布式、公开透明、无法作弊、不可篡改、信息安全等特性，打造了新的考勤系统。**
+
+基于区块链技术的考勤系统，采用如下的实现思路：一个单位作为一个主账户，所有员工生成对应的子账户，单位一天一码，上班打卡添加对应子账户的上班信息并广播到星云区块链网络中。将打卡信息广播到区块链中确认后，我们的考勤系统可以对打卡数据进行分析导出。
+
+# 我们的优势
+
+1. 数据不可篡改，无法作弊
+2. 数据永不丢失
+3. 简化考勤流程
+4. 同时支持PC端和移动端考勤
+
+我们还将与多家公司合作，落地星云考勤系统，相信会有越来越多的应用成果不断涌现。
+
+# 系统使用示例
+
+![](http://zzkun-tuchuang.oss-cn-hangzhou.aliyuncs.com/18-6-2/69589895.jpg)
+
+![](http://zzkun-tuchuang.oss-cn-hangzhou.aliyuncs.com/18-6-2/49016057.jpg)
+
+![](http://zzkun-tuchuang.oss-cn-hangzhou.aliyuncs.com/18-6-2/23388368.jpg)
+
+![](http://zzkun-tuchuang.oss-cn-hangzhou.aliyuncs.com/18-6-2/20185719.jpg)
 
 
-## 第一步：注册
+![](http://zzkun-tuchuang.oss-cn-hangzhou.aliyuncs.com/18-6-2/84149867.jpg)
 
-* 用【企业支付宝账号】登录开放平台 ；
-* 进入【小程序公测首页】 申请小程序公测，审核时间为1个工作日；
+![](http://zzkun-tuchuang.oss-cn-hangzhou.aliyuncs.com/18-6-2/17552954.jpg)
 
-> 注意1：公测期间尚未开放个人支付宝账户
-> 注意2：未注册企业支付宝账号请访问：注册企业支付宝账号
+![](http://zzkun-tuchuang.oss-cn-hangzhou.aliyuncs.com/18-6-2/80546122.jpg)
 
-## 第二步：入驻
+![](http://zzkun-tuchuang.oss-cn-hangzhou.aliyuncs.com/18-6-2/13123140.jpg)
 
-使用企业支付宝账户登录，依照入驻指引选择自己入驻的身份角色，完善身份信息，签署平台服务协议，成为开放平台合作伙伴。
+![](http://zzkun-tuchuang.oss-cn-hangzhou.aliyuncs.com/18-6-2/73809555.jpg)
 
-**1. 支付宝账号登录**
+![](http://zzkun-tuchuang.oss-cn-hangzhou.aliyuncs.com/18-6-2/45086019.jpg)
 
-![](https://gw.alipayobjects.com/zos/skylark/public/files/e3ecca36714dd5d0cc8ecca0f84c000a.png)
 
-**2. 选择入驻身份**
+![](http://zzkun-tuchuang.oss-cn-hangzhou.aliyuncs.com/18-6-2/44571522.jpg)
 
-![](https://gw.alipayobjects.com/zos/skylark/public/files/b39b0dfa0c13882e4ab7377fc9f194d0.png)
+![](http://zzkun-tuchuang.oss-cn-hangzhou.aliyuncs.com/18-6-2/56116726.jpg)
 
-**3. 完善信息**
-
-![](https://gw.alipayobjects.com/zos/skylark/public/files/af51a6e5c4c41089588b8a2ea9f4c993.png)
-
-## 第三步：登录小程序管理中心
-
-完成注册后，可以选择以下渠道进入小程序管理中心：
-
-* 通过小程序首页,点击“登录管理中心”，进入小程序管理中心，开始【创建小程】
-* 通过开放平台首页,点击"登录"，进入开放平台管理中心，选择“开发者中心／小程序”，开始【创建小程序】
-
-![](https://gw.alipayobjects.com/zos/skylark/public/files/5272d5041de283125ac03428a6e0ed4f.png)`;
+`;
 
 export default class MarkdownDocs extends Component {
   static displayName = 'MarkdownDocs';

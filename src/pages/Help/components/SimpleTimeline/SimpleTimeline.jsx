@@ -18,58 +18,58 @@ export default class SimpleTimeline extends Component {
 
   render() {
     return (
-      <IceContainer title="物流信息">
+      <IceContainer title="星云考勤系统使用过程">
         <Timeline
-          fold={[
-            { foldArea: [1, 2], foldShow: false },
-            { foldArea: [5], foldShow: false },
-          ]}
         >
           <TimelineItem
-            title="签收"
-            content="【杭州市】已签收,签收人是阿里巴巴小邮局，感谢使用申通快递，期待再次为您服务"
-            time="2016-06-10 10:30:00"
+            title="老板"
+            content="打开星云考勤系统首页，进入“创建考勤”选项卡"
             state="process"
           />
           <TimelineItem
-            title="派送"
-            content="【杭州市】快件已到达 浙江杭州滨江公司"
-            time="2016-06-10 09:30:00"
+            title="老板"
+            content="填写老板所属的考勤组织、考勤标题、考勤对应的日期"
+            state="process"
           />
           <TimelineItem
-            title="派送"
-            content="【杭州市】浙江杭州滨江公司派件员正在为您派件"
-            time="2016-06-10 09:03:00"
+            title="老板"
+            content="提交表单，可通过电脑端或者手机端交易创建考勤"
+            state="process"
           />
           <TimelineItem
-            title="运输"
-            content="【杭州市】浙江杭州转运中心 已发出"
-            time="2016-06-10 06:10:00"
+            title="老板"
+            content="交易成功后，系统给出员工打卡二维码，保存/截图二维码"
+            state="process"
           />
           <TimelineItem
-            title="运输"
-            content="【东莞市】广东东莞转运中心 已发出"
-            time="2016-06-09 18:00:00"
+            title="老板"
+            content="将生成的二维码，上班前粘贴到公司入口，供员工扫描打卡"
+            state="process"
           />
           <TimelineItem
-            title="揽件"
-            content="【东莞市】申通快递 广东东莞凤岗分部收件员 已揽件"
-            time="2016-06-09 16:12:00"
+            title="员工"
+            content="员工上班时，在门口扫描考勤二维码"
+            state="success"
           />
           <TimelineItem
-            title="揽件"
-            content="【东莞市】商家正通知快递公司揽件"
-            time="2016-06-09 14:00:00"
+            title="员工"
+            content="查看当天的考勤信息，填写自己的工号"
+            state="success"
           />
           <TimelineItem
-            title="揽件"
-            content="【东莞市】您的订单待配货"
-            time="2016-06-09 10:12:19"
+            title="员工"
+            content="提交信息后，弹出NAS手机钱包进行交易"
+            state="success"
           />
           <TimelineItem
-            title="揽件"
-            content="【东莞市】您的订单开始处理"
-            time="2016-06-09 10:01:09"
+            title="员工"
+            content="交易成功后，可以到“我的考勤”查看自己的打卡记录"
+            state="success"
+          />
+          <TimelineItem
+            title="老板"
+            content="可以随时到“我的考勤”里，查看每天的员工打卡情况"
+            state="process"
           />
         </Timeline>
       </IceContainer>

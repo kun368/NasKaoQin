@@ -29,7 +29,7 @@ export default class Home extends Component {
         onClose={this.onWelcomeDialogClose}
         title="欢迎使用星云考勤系统"
       >
-        <p style={{color: 'red'}}>本应用已完美支持手机扫码+手机钱包考勤！</p>
+        <p style={{color: 'red'}}>本应用已完美支持：移动端界面自适应 + 移动端扫码考勤 + 移动端钱包交易！</p>
         <p>
           如何避免考勤作弊？<br/>
           如何更加灵活地安排考勤流程？<br/>
