@@ -58,13 +58,10 @@ export default class ContentEditor extends Component {
         args: `["${values.organization}", "${values.title}", "${day}"]`,
       };
       NebUtils.nebPayCall(contract.function, contract.args, false, (txHash) => {
-        Toast.success("已提交交易，请不要关闭页面，耐心等待交易完成~");
-        NebUtils.intervalQueryTx(txHash, () => {
-          this.setState({
-            qrDialogShow: true,
-            txHash: txHash,
-          });
-        })
+        this.setState({
+          qrDialogShow: true,
+          txHash: txHash,
+        });
       });
 
     });
@@ -90,6 +87,7 @@ export default class ContentEditor extends Component {
       >
         <div style={{textAlign: 'center'}}>
           <QRCode value={url} renderAs="svg" size={196}/>
+          <p>（此二维码交易成功后可用）</p>
         </div>
         <p>请将此二维码保存后放置在员工上班入口，员工手机扫码后可以进行考勤打卡！</p>
         <p>您还可以到“我的考勤”页面，查看员工打卡情况</p>
