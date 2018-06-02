@@ -5,34 +5,34 @@ const { Row, Col } = Grid;
 
 const dataSource = [
   {
-    title: '主页背书',
+    title: '一天一码',
     pic: 'https://img.alicdn.com/tfs/TB1i7OMif6H8KJjSspmXXb2WXXa-210-210.png',
-    desc: '这里填写具体的细节描述',
+    desc: '赋能企业考勤管理',
   },
   {
-    title: '频道入驻',
+    title: '高效管理',
     pic: 'https://img.alicdn.com/tfs/TB1wA5KinvI8KJjSspjXXcgjXXa-210-210.png',
-    desc: '这里填写具体的细节描述',
+    desc: '简化考勤流程 数据永不丢失',
   },
   {
-    title: '商业扶持',
+    title: '公开透明',
     pic: 'https://img.alicdn.com/tfs/TB1laelicjI8KJjSsppXXXbyVXa-210-210.png',
-    desc: '这里填写具体的细节描述',
+    desc: '分布式、公开透明、无法作弊',
   },
   {
-    title: '专属管家',
+    title: '安全第一',
     pic: 'https://img.alicdn.com/tfs/TB1EfLYfOqAXuNjy1XdXXaYcVXa-207-210.png',
-    desc: '这里填写具体的细节描述',
+    desc: '不可篡改、信息安全',
   },
   {
-    title: '资源优选',
+    title: '移动兼容',
     pic: 'https://img.alicdn.com/tfs/TB1a31mignH8KJjSspcXXb3QFXa-210-210.png',
-    desc: '这里填写具体的细节描述',
+    desc: '同时支持PC电脑端和移动端',
   },
   {
-    title: '快捷搜索',
+    title: '符合需求',
     pic: 'https://img.alicdn.com/tfs/TB1ALecicrI8KJjy0FhXXbfnpXa-210-210.png',
-    desc: '这里填写具体的细节描述',
+    desc: '更人性化、更高效化、更具适应性',
   },
 ];
 

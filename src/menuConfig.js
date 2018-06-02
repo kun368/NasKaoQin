@@ -59,16 +59,16 @@ const asideMenuConfig = [
     path: '/Help',
     icon: 'bell',
   },
-  {
-    name: 'PunchCard',
-    path: '/PunchCard/0',
-    icon: 'home',
-  },
-  {
-    name: 'PunchDetail',
-    path: '/PunchDetail/0',
-    icon: 'home',
-  },
+  // {
+  //   name: 'PunchCard',
+  //   path: '/PunchCard/0',
+  //   icon: 'home',
+  // },
+  // {
+  //   name: 'PunchDetail',
+  //   path: '/PunchDetail/0',
+  //   icon: 'home',
+  // },
 ];
 
 export { headerMenuConfig, asideMenuConfig };

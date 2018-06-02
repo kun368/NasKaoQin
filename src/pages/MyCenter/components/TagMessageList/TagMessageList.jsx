@@ -1,48 +1,76 @@
 import React, { Component } from 'react';
-import { Tab } from '@icedesign/base';
+import { Tab, Feedback } from '@icedesign/base';
 import IceContainer from '@icedesign/container';
 import './TagMessageList.scss';
+import NebUtils from "../../../../../util/NebUtils";
 
-const dataSource = [
-  { title: '关于淘宝网存储设备商品发布规范的公告', date: '2017/01/06' },
-  { title: '加强淘宝网电动四轮车类目准入的公告', date: '2017/01/06' },
-  { title: '淘宝网VR头盔商品发布规范的公告', date: '2017/01/06' },
-  { title: '加强淘宝网农药类目准入的公告', date: '2017/01/06' },
-  { title: '淘宝网2017年春节发货时间及交易超时调整公告', date: '2017/01/06' },
-];
+const Toast = Feedback.toast;
+
 
 export default class TagMessageList extends Component {
   static displayName = 'TagMessageList';
 
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      days: [],
+      cards: [],
+    };
   }
 
-  renderItem = (item, idx) => {
+  componentDidMount() {
+    if (!NebUtils.checkInstalledPlugin()) {
+      Toast.error('还未安装Chrome扩展，请在电脑端打开并安装扩展使用！');
+      return;
+    }
+    Toast.success("正在获取数据中，请稍等...");
+    NebUtils.getPluginUserAddress(addr => {
+      NebUtils.userCallAxios("queryUserAll", `["${addr}"]`, resp => {
+        this.setState({
+          days: resp.days.reverse(),
+          cards: resp.cards.reverse(),
+        });
+      })
+    });
+  }
+
+  renderDays = (item, idx) => {
+    const url = `/#/PunchDetail/${item.txHash}`;
+
     return (
       <div style={styles.item} key={idx}>
-        <a href="##" style={styles.title}>
-          {item.title}
+        <a href={url} style={styles.title}>
+          {item.organization} —— {item.title} （{item.forDay}）
         </a>
-        <div style={styles.date}>{item.date}</div>
+        <div style={styles.date}>{new Date(item.time).toLocaleDateString()}</div>
+      </div>
+    );
+  };
+
+  renderCards = (item, idx) => {
+    const url = `/#/PunchDetail/${item.kqDayId}`;
+
+    return (
+      <div style={styles.item} key={idx}>
+        <a href={url} style={styles.title}>
+          员工编号{item.userId}
+        </a>
+        <div style={styles.date}>{new Date(item.time).toLocaleDateString()}</div>
       </div>
     );
   };
 
   render() {
+
     return (
       <div className="tag-message-list">
         <IceContainer>
           <Tab size="small">
-            <Tab.TabPane key={0} tab="我的消息">
-              {dataSource.map(this.renderItem)}
-              <div style={styles.allMessage}>
-                <a href="##">查看全部消息</a>
-              </div>
+            <Tab.TabPane key={0} tab={`我发布的考勤（${this.state.days.length}）`}>
+              {this.state.days.map(this.renderDays)}
             </Tab.TabPane>
-            <Tab.TabPane key={1} tab="待我处理">
-              <p>暂无数据</p>
+            <Tab.TabPane key={1} tab={`我的打卡记录（${this.state.cards.length}）`}>
+              {this.state.cards.map(this.renderCards)}
             </Tab.TabPane>
           </Tab>
         </IceContainer>

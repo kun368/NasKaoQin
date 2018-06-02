@@ -7,6 +7,7 @@ export default class MyCenter extends Component {
   constructor(props) {
     super(props);
     this.state = {};
+
   }
 
   render() {
